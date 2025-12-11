@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniView - Failure Mode Analysis</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    .video-container { margin: 10px 0; }
+    .section-title { margin-top: 40px; margin-bottom: 20px; }
+    table { margin: 0 auto; }
+    th { padding: 5px; vertical-align: top; }
+    .source-path { font-size: 10px; color: #666; max-width: 200px; word-wrap: break-word; }
+  </style>
+</head>
+<body>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">OmniView - Failure Mode Analysis</h1>
+        <h2 class="subtitle">Examples of less successful generations for analysis</h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2 class="title is-3">Video Novel View Synthesis</h2>
+        <p class="subtitle is-5">Failure cases in camera-controlled video synthesis.</p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_01-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_01-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/24_fps8_scale0.2_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_02-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_02-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/pup_base_fps8_scale1_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_03-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_03-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/13_fps16_scale1_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_04-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_04-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/2/input_fps24_scale0_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_05-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_05-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Garden_Scene_Video_Generation_fps24_scale0.2_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_06-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_06-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/ghost_base_fps24_scale0_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_07-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_07-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Sunset_Rooftop_Scarf_Video_Generation_fps8_scale0.2_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_08-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_08-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Sunset_Rooftop_Scarf_Video_Generation_fps16_scale0_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_09-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_09-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/14_fps8_scale1_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_10-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_10-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Canal_Boat_Video_Generation_fps16_scale1_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_11-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_11-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/pup_base_fps16_scale0_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_12-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_12-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/cat_base_fps16_scale0.2_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_13-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_13-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/3/input_fps24_scale0_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_14-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_14-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Ice_Skater_Video_Generation_fps8_scale0_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_15-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_15-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/4/input_fps8_scale0_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_16-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_16-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/6_fps16_scale0_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_17-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_17-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/0/input_fps8_scale1_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_18-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_18-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/24_fps16_scale1_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_19-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_19-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/cat_base_fps8_scale0_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_20-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_20-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/17_fps8_scale1_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_21-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_21-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Robot_Walks_Past_Vintage_Tins_fps24_scale0.2_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_22-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_22-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/10_fps8_scale1_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_23-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_23-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/6_fps8_scale0_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_24-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_24-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/16_fps8_scale0.2_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_25-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_25-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/monster_base_fps24_scale1_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_26-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_26-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/10_fps8_scale0.2_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_27-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_27-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/3/input_fps16_scale1_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_28-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_28-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Evening_Dress_Video_Generation_fps24_scale0_circular_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_29-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_29-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/15_fps8_scale0_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_30-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_30-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Sunset_Scarf_Whip_Video_fps8_scale0.2_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_31-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_31-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/7_fps8_scale1_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_32-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_video_nvs_32-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/15_fps16_scale0.2_spiral_trajectory_video_nvs</div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-title">
+        <h2 class="title is-3">Static Novel View Synthesis</h2>
+        <p class="subtitle is-5">Failure cases in novel view generation for static scenes.</p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_01-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_01-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/19_fps24_scale0_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_02-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_02-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Evening_Dress_Video_Generation_fps24_scale0.2_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_03-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_03-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/pup_base_fps24_scale1_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_04-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_04-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/26_fps24_scale0_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_05-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_05-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/cat_base_fps24_scale0_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_06-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_06-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Spinning_Umbrella_Under_Lanterns_fps16_scale0_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_07-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_07-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/monster_fps8_scale0_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_08-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_08-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/ghost_base_fps24_scale0.2_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_09-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_09-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/23_fps16_scale1_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_10-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_10-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Hiker_Adjusting_Pack_On_Ridge_fps24_scale0.2_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_11-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_11-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/7_fps24_scale1_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_12-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_12-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/9_fps8_scale1_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_13-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_13-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/12_fps8_scale0_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_14-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_14-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/15_fps16_scale0.2_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_15-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_15-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Sunset_Scarf_Whip_Video_fps16_scale0.2_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_16-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_16-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/12_fps24_scale1_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_17-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_17-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/2/input_fps16_scale1_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_18-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_18-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Canal_Boat_Video_Generation_fps8_scale1_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_19-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_19-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/ghost_fps8_scale0.2_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_20-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_20-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/ghost_base_fps8_scale0.2_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_21-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_21-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Ice_Skater_Video_Generation_fps16_scale0.2_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_22-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_22-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/yellow_duck_fps8_scale1_spiral_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_23-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_23-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/17_fps16_scale0.2_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_24-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_static_nvs_24-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/25_fps16_scale0_circular_trajectory_static_nvs</div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-title">
+        <h2 class="title is-3">Image-to-Video Generation</h2>
+        <p class="subtitle is-5">Failure cases in video generation from single images.</p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_01-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_01-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/4_fps8_scale1_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_02-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_02-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/27_fps16_scale0.2_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_03-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_03-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/7_fps8_scale0.2_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_04-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_04-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/0/input_fps16_scale1_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_05-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_05-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/17_fps16_scale0_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_06-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_06-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Ice_Skater_Video_Generation_fps16_scale1_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_07-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_07-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/15_fps24_scale1_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_08-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_08-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/ghost_base_fps16_scale0_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_09-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_09-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Spinning_Umbrella_Under_Lanterns_fps16_scale0.2_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_10-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_10-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/1_fps24_scale0.2_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_11-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_11-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/cat_fps16_scale0.2_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_12-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_12-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/7_fps16_scale1_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_13-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_13-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/ghost_fps8_scale1_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_14-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_14-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Sunset_Rooftop_Scarf_Video_Generation_fps16_scale1_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_15-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_15-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/5_fps24_scale1_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_16-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_16-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Spinning_Umbrella_Under_Lanterns_fps8_scale0_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_17-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_17-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/9_fps8_scale1_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_18-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_18-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/cat_fps24_scale0.2_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_19-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_19-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/4/input_fps16_scale0_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_20-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_20-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Evening_Dress_Video_Generation_fps8_scale0.2_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_21-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_21-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/26_fps8_scale1_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_22-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_22-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/0_fps8_scale1_circular_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_23-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_23-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/12_fps16_scale0_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_24-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_i2v_24-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/0/input_fps24_scale0_spiral_trajectory_i2v</div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-title">
+        <h2 class="title is-3">Video-to-Video Translation</h2>
+        <p class="subtitle is-5">Failure cases in video-to-video translation.</p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_01-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_01-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Evening_Dress_Video_Generation_fps16_scale0_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_02-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_02-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/4/input_fps8_scale0_circular_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_03-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_03-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/0/input_fps16_scale0.2_circular_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_04-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_04-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Garden_Scene_Video_Generation_fps16_scale0.2_circular_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_05-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_05-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/22_fps16_scale0_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_06-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_06-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/ghost_base_fps8_scale1_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_07-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_07-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/25_fps16_scale0_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_08-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_08-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/0_fps8_scale0_circular_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_09-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_09-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/0_fps8_scale0.2_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_10-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_10-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/21_fps8_scale0.2_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_11-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_11-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/monster_fps24_scale0.2_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_12-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_12-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/6_fps16_scale0.2_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_13-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_13-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/20_fps24_scale1_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_14-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_14-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Hiker_Adjusting_Pack_On_Ridge_fps8_scale0_circular_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_15-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_15-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/22_fps16_scale1_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Conditioning</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_16-cond.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_v2v_16-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/31_fps24_scale1_spiral_trajectory_v2v</div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-title">
+        <h2 class="title is-3">Keyframe Interpolation</h2>
+        <p class="subtitle is-5">Failure cases in keyframe interpolation.</p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_01-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_01-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_01-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Canal_Boat_Video_Generation_fps8_scale0_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_02-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_02-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_02-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/22_fps8_scale0_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_03-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_03-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_03-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/ghost_fps8_scale0_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_04-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_04-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_04-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/9_fps16_scale0.2_spiral_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_05-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_05-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_05-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/11_fps24_scale0_spiral_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_06-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_06-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_06-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/5_fps8_scale0_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_07-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_07-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_07-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/5_fps24_scale0_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_08-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_08-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_08-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/2/input_fps16_scale0.2_spiral_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_09-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_09-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_09-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Spinning_Umbrella_Under_Lanterns_fps16_scale1_spiral_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_10-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_10-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_10-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">tanks_and_temples/5/input_fps8_scale1_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_11-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_11-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_11-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/14_fps24_scale1_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_12-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_12-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_12-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/Sunset_Rooftop_Scarf_Video_Generation_fps8_scale0.2_spiral_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_13-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_13-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_13-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/27_fps16_scale0.2_spiral_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_14-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_14-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_14-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/3_fps8_scale0.2_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_15-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_15-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_15-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">iiw_videos/cat_fps24_scale1_spiral_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Start Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_16-cond0.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">End Frame</div>
+                <video width="160" height="90" src="static/videos/failures/fail_keyframe_interp_16-cond1.mp4" autoplay loop muted />
+              </th>
+              <th>
+                <div style="text-align: center; font-size: 14px; margin-bottom: 5px;">Generated</div>
+                <video width="320" height="180" src="static/videos/failures/fail_keyframe_interp_16-gen.mp4" autoplay loop controls muted />
+              </th>
+              <th>
+                <div class="source-path">veo2_freeze_view/9_fps16_scale1_circular_trajectory_keyframe_interp</div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
