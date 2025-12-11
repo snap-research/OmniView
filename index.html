@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="OmniView: An All-Seeing Diffusion Model for 3D and 4D View Synthesis">
+  <meta property="og:title" content="OmniView: An All-Seeing Diffusion Model for 3D and 4D View Synthesis" />
+  <meta property="og:description" content="We introduce OmniView, a unified framework that generalizes across a wide range of 4D consistency tasks." />
+  <meta property="og:url" content="https://omniview-video.github.io/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>OmniView: An All-Seeing Diffusion Model for 3D and 4D View Synthesis</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <style>
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .carousel-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .carousel-arrow {
+      background: #1772d0;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+    
+    .carousel-arrow:hover {
+      background: #0d5aa7;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transform: scale(1.05);
+    }
+    
+    .carousel-arrow:disabled {
+      background: #e0e0e0;
+      color: #999;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+    
+    .demo-video-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .slide-content {
+      margin: 20px 0 40px 0;
+      width: 100%;
+    }
+    
+    .demo-video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    
+    .keyframe-demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .demo-video-pair, .demo-video-triple {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+    
+    .keyframe-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 15px;
+      justify-items: center;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .demo-video {
+      width: 280px;
+      height: 158px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    
+    .keyframe-video {
+      width: 200px;
+      height: 112px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    
+    .video-label {
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+      .carousel-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .carousel-content {
+        order: 1;
+      }
+      
+      .prev-arrow {
+        order: 0;
+      }
+      
+      .next-arrow {
+        order: 2;
+      }
+      
+      .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head><body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <img width="36" height="36" src="static/images/logo.png" />
+              OmniView: An All-Seeing Diffusion Model for 3D and 4D View Synthesis
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://xiangfan.io/" target="_blank">Xiang Fan</a><sup>1 2</sup>,</span>
+              <span class="author-block"><a href="" target="_blank">Sharath Girish</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="" target="_blank">Vivek Ramanujan</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="" target="_blank">Chaoyang Wang</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="" target="_blank">Ashkan Mirzaei</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="" target="_blank">Petr Sushko</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="" target="_blank">Aliaksandr Siarohin</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="" target="_blank">Sergey Tulyakov</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://www.ranjaykrishna.com/" target="_blank">Ranjay Krishna</a><sup>1</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Washington, <sup>2</sup>Snap Inc.</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper (Coming Soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/omniview-video/omniview" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Prior approaches injecting camera control into diffusion models have focused on specific subsets of 4D
+              consistency tasks: novel view synthesis, text-to-video with camera control, image-to-video, amongst
+              others. Therefore, these fragmented approaches are trained on disjoint slices of available 3D/4D data. We
+              introduce OmniView, a unified framework that generalizes across a wide range of 4D consistency tasks. Our
+              method separately represents space, time, and view conditions, enabling flexible combinations of these
+              inputs. For example, OmniView can synthesize novel views from static, dynamic, and multiview inputs,
+              extrapolate trajectories forward and backward in time, and create videos from text or image prompts with
+              full camera control. OmniView is competitive with task-specific models across diverse benchmarks and
+              metrics, improving image quality scores among camera-conditioned diffusion models by up to 33% in
+              multiview NVS LLFF dataset, 60% in dynamic NVS Neural 3D Video benchmark, 20% in static camera control on
+              RE-10K, and reducing camera trajectory errors by 4x in text-conditioned video generation. With strong
+              generalizability in one model, OmniView demonstrates the feasibility of a generalist 4D video model.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Teaser</h2>
+          <div class="content has-text-justified">
+            <p>
+              Watch our comprehensive demonstration showcasing OmniView's capabilities across all supported tasks. 
+              This video presents conditioning inputs alongside generated results for dynamic novel view synthesis, 
+              static novel view synthesis, image-to-video generation, keyframe interpolation, and video-to-video translation.
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <video class="teaser-video" controls style="width: 100%; max-width: 800px; height: auto; border-radius: 8px;">
+                <source src="static/videos/teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <section class="section demo-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Dynamic Novel View Synthesis</h2>
+          <div class="content has-text-justified">
+            <p>Camera-controlled video synthesis from input video. Given a video sequence captured from one viewpoint, our model generates the same scene from novel camera perspectives while preserving temporal dynamics. This task requires maintaining 3D consistency across viewpoints and temporal coherence across frames, ensuring that moving objects and camera motion are properly disentangled and rendered from new angles.</p>
+          </div>
+          
+          <div class="carousel-container">
+            <button class="carousel-arrow prev-arrow" data-section="video-nvs" data-direction="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-content">
+          <!-- Slide 0 -->
+          <div class="slide-content" data-slide="0" style="display: block;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_43-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_43-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_12-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_12-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 1 -->
+          <div class="slide-content" data-slide="1" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_34-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_34-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_26-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_26-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide-content" data-slide="2" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_38-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_38-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_40-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_40-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide-content" data-slide="3" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_66-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_66-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_47-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_47-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slide-content" data-slide="4" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_19-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_19-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_23-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_23-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="slide-content" data-slide="5" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_01-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_01-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_19-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_19-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="slide-content" data-slide="6" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_36-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_36-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_46-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_46-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 7 -->
+          <div class="slide-content" data-slide="7" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_55-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_55-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_56-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_56-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 8 -->
+          <div class="slide-content" data-slide="8" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_60-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_60-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_62-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_62-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 9 -->
+          <div class="slide-content" data-slide="9" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_67-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_67-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_69-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/video_nvs_69-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 10 -->
+          <div class="slide-content" data-slide="10" style="display: none;" role="tabpanel">
+            <div class="demo-video-row">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_71-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/video_nvs_71-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+            </div>
+            <button class="carousel-arrow next-arrow" data-section="video-nvs" data-direction="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section demo-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Play and Freeze Time</h2>
+          <div class="content has-text-justified">
+            <p>A unique capability where temporal and spatial controls are seamlessly combined. The video initially plays forward in time, then freezes at a specific moment while the camera moves to explore the scene from different viewpoints, and finally resumes temporal progression. This demonstrates our model's ability to decouple time and space, allowing independent control over when and where to observe the scene.</p>
+          </div>
+          
+          <div class="carousel-container">
+            <button class="carousel-arrow prev-arrow" data-section="static-nvs" data-direction="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-content">
+          <!-- Slide 0 -->
+          <div class="slide-content" data-slide="0" style="display: block;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/static_nvs_01-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/static_nvs_01-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/static_nvs_03-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/static_nvs_03-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 1 -->
+          <div class="slide-content" data-slide="1" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/static_nvs_12-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/static_nvs_12-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/static_nvs_15-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/static_nvs_15-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide-content" data-slide="2" style="display: none;" role="tabpanel">
+            <div class="demo-video-row">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/static_nvs_17-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/static_nvs_17-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+            </div>
+            <button class="carousel-arrow next-arrow" data-section="static-nvs" data-direction="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section demo-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Image-to-Video Generation w/ Camera Control</h2>
+          <div class="content has-text-justified">
+            <p>Transform static images into dynamic videos with full camera control. Starting from a single input image, our model generates temporal dynamics while simultaneously allowing camera movement through the scene. This task requires hallucinating plausible 3D structure from 2D observations and animating the scene with realistic object motion, lighting changes, and camera trajectories.</p>
+          </div>
+          
+          <div class="carousel-container">
+            <button class="carousel-arrow prev-arrow" data-section="i2v" data-direction="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-content">
+          <!-- Slide 0 -->
+          <div class="slide-content" data-slide="0" style="display: block;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/i2v_22-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/i2v_22-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/i2v_01-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/i2v_01-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 1 -->
+          <div class="slide-content" data-slide="1" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/i2v_03-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/i2v_03-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/i2v_09-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/i2v_09-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide-content" data-slide="2" style="display: none;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/i2v_15-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/i2v_15-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/i2v_18-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/i2v_18-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+            </div>
+            <button class="carousel-arrow next-arrow" data-section="i2v" data-direction="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section demo-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Video-to-Video Generation w/ Camera Control</h2>
+          <div class="content has-text-justified">
+            <p>Extend short video clips into longer sequences with camera control. Given an input video segment, our model predicts future frames while allowing the camera trajectory to be specified independently. This enables creative control over both the temporal evolution of the scene and the viewing perspective, useful for applications like cinematography and content creation where specific camera movements are desired.</p>
+          </div>
+          
+          <div class="carousel-content">
+          <!-- Slide 0 -->
+          <div class="slide-content" data-slide="0" style="display: block;" role="tabpanel">
+            <div class="demo-video-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">Conditioning</div>
+                <video class="demo-video" src="static/videos/demos/v2v_01-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/v2v_01-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/v2v_02-cond.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/v2v_02-gen.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section demo-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Keyframe Interpolation</h2>
+          <div class="content has-text-justified">
+            <p>Generate smooth video sequences between specified keyframe images with camera control. Given two or more keyframe images that define the start and end states, our model creates natural temporal transitions while maintaining 3D consistency. This is particularly useful for animation workflows where artists specify key poses or states, and the model fills in the intermediate frames with realistic motion and camera movement.</p>
+          </div>
+          
+          <div class="carousel-content">
+          <!-- Slide 0 -->
+          <div class="slide-content" data-slide="0" style="display: block;" role="tabpanel">
+            <div class="keyframe-demo-grid">
+              <div class="demo-video-pair">
+                <div class="video-label">First Keyframe</div>
+                <video class="demo-video" src="static/videos/demos/keyframe_interp_05-cond0.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Generated</div>
+                <video class="demo-video" src="static/videos/demos/keyframe_interp_05-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <div class="video-label">Last Keyframe</div>
+                <video class="demo-video" src="static/videos/demos/keyframe_interp_05-cond1.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/keyframe_interp_06-cond0.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/keyframe_interp_06-gen.mp4" autoplay loop muted></video>
+              </div>
+              <div class="demo-video-pair">
+                <video class="demo-video" src="static/videos/demos/keyframe_interp_06-cond1.mp4" autoplay loop muted></video>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <p>
+              Our approach unifies multiple 4D consistency tasks through a shared framework that separately models space, time, and camera viewpoint conditions.
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <img src="static/images/method.png" alt="OmniView method overview" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Citation</h2>
+          <div class="content">
+            <pre style="text-align: left;"><code>@article{fan2025omniview,
+  title={OmniView: An All-Seeing Diffusion Model for 3D and 4D View Synthesis},
+  author={Fan, Xiang and Girish, Sharath and Ramanujan, Vivek and Wang, Chaoyang and Mirzaei, Ashkan and Sushko, Petr and Siarohin, Aliaksandr and Tulyakov, Sergey and Krishna, Ranjay},
+  journal={arXiv preprint},
+  year={2025}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://github.com/omniview-video/omniview" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which you do not want on your website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Arrow-based carousel functionality
+      const sections = document.querySelectorAll('.demo-section');
+      
+      sections.forEach(section => {
+        const slides = section.querySelectorAll('.slide-content');
+        const prevArrow = section.querySelector('.prev-arrow');
+        const nextArrow = section.querySelector('.next-arrow');
+        
+        if (!slides.length || (!prevArrow && !nextArrow)) {
+          return; // Skip sections without slides or arrows
+        }
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Function to show specific slide
+        function showSlide(index) {
+          // Hide all slides
+          slides.forEach((slide, slideIndex) => {
+            if (slideIndex === index) {
+              slide.style.display = 'block';
+              const videos = slide.querySelectorAll('video');
+              videos.forEach(v => {
+                v.currentTime = 0;
+                v.play().catch(() => {});
+              });
+            } else {
+              slide.style.display = 'none';
+              const videos = slide.querySelectorAll('video');
+              videos.forEach(v => v.pause());
+            }
+          });
+          
+          // Update arrow states
+          if (prevArrow) {
+            prevArrow.disabled = (index === 0);
+          }
+          if (nextArrow) {
+            nextArrow.disabled = (index === totalSlides - 1);
+          }
+        }
+        
+        // Arrow click handlers
+        if (prevArrow) {
+          prevArrow.addEventListener('click', () => {
+            if (currentSlide > 0) {
+              currentSlide--;
+              showSlide(currentSlide);
+            }
+          });
+        }
+        
+        if (nextArrow) {
+          nextArrow.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+              currentSlide++;
+              showSlide(currentSlide);
+            }
+          });
+        }
+        
+        // Keyboard navigation
+        section.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft' && currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+            e.preventDefault();
+          } else if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+            e.preventDefault();
+          }
+        });
+        
+        // Make section focusable for keyboard navigation
+        section.setAttribute('tabindex', '0');
+        
+        // Initialize first slide
+        showSlide(0);
+      });
+    });
+  </script>
+</body>
+</html>
